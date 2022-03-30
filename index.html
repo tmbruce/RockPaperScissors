@@ -8,6 +8,7 @@
   </head>
   <body>
     <script>
+      let scoreBoard = { player: 0, computer: 0 };
       const options = ["Rock", "Paper", "Scissors"];
       let playerSelection = prompt("Rock, Paper, or Scissors?");
 
@@ -29,10 +30,12 @@
               output = `You lose! ${capitalize(
                 computerSelection
               )} beats ${capitalize(playerSelection)}`;
+              scoreBoard.computer += 1;
             } else {
               output = `You Win! ${capitalize(
                 playerSelection
               )} beats ${capitalize(computerSelection)}`;
+              scoreBoard.player += 1;
             }
           }
           if (playerSelection == "paper") {
@@ -40,10 +43,12 @@
               output = `You lose! ${capitalize(
                 computerSelection
               )} beats ${capitalize(playerSelection)}`;
+              scoreBoard.computer += 1;
             } else {
               output = `You Win! ${capitalize(
                 playerSelection
               )} beats ${capitalize(computerSelection)}`;
+              scoreBoard.player += 1;
             }
           }
           if (playerSelection == "scissors") {
@@ -51,16 +56,16 @@
               output = `You lose! ${capitalize(
                 computerSelection
               )} beats ${capitalize(playerSelection)}`;
+              scoreBoard.computer += 1;
             } else {
               output = `You Win! ${capitalize(
                 playerSelection
               )} beats ${capitalize(computerSelection)}`;
+              scoreBoard.player += 1;
             }
           }
         }
-        console.log(
-          `Player: ${playerSelection} Computer: ${computerSelection}`
-        );
+        console.log(scoreBoard);
         return output;
       };
 
